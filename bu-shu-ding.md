@@ -4,15 +4,19 @@
 
 ### 1. NodePort
 
-#### 所有節點都會開啟某個 port 對外
+#### 設定 NodePort 可以讓你從你的電腦連線到 Container
 
-在建立 Container 的時候指定，或編輯 
+在建立 Container 的時候指定，或編輯 Port 欄位
 
 | Container Port | Protocol | Type | Port on Node |
 | :--- | :--- | :--- | :--- |
 | Container 上的 Port | TCP or UDP | NodePort | 對外 Port |
 
-![container &#x4E0A;&#x7684; 80 &#x5C0D;&#x4E0A;&#x4E00;&#x500B;&#x96A8;&#x6A5F;&#x7684; port \(30000 - 32767\) ](.gitbook/assets/3.PNG)
+![container &#x4E0A;&#x7684; 80 &#x5C0D;&#x4E0A;&#x4E00;&#x500B;&#x96A8;&#x6A5F;&#x7684; port \(30000 - 32767\)](.gitbook/assets/1.png)
+
+完成後，回到 Workloads 頁面，會看到底下的 `30189/TCP` 點它後，跳出的新網頁，網址列上的 ip: port 就可以連到 Container 上
+
+![](.gitbook/assets/image%20%2823%29.png)
 
 ### 2. Ingress
 
@@ -22,15 +26,17 @@
 只支援 HTTP\(S\) 協定
 {% endhint %}
 
-#### 到 Cluster:xxx -&gt; Project:xxx -&gt; Workloads -&gt; Load Balancing 的 Tab \(Wrkloads 右邊\)
+#### 到左上角 Cluster:xxx -&gt; Project:xxx 右邊的 Workloads 下方的 Load Balancing 
 
 按右上角 `Add Ingress`
 
 ![](.gitbook/assets/2.PNG)
 
-設定 Name, 所屬 Namespace, Rules。  
-Rules 選第一個 `Automatically generate`Target 選要對應到的 workloads 和 container port，  
+設定 Name, 所屬 Namespace, Rules 選第一個 `Automatically generate`Target 選要對應到的 workloads 和 container port
+
+{% hint style="info" %}
 也可以自己指定 Domain name \(需自行設定 hosts 對應到任一個 node 的 ip\)
+{% endhint %}
 
 ![](.gitbook/assets/image%20%2820%29.png)
 
@@ -54,12 +60,15 @@ Rules 選第一個 `Automatically generate`Target 選要對應到的 workloads �
 
 ![](.gitbook/assets/2%20%281%29.PNG)
 
-設定位置、空間大小、Access Mode，  
-Source 選 `Use a Storage Class to  provision a new persistent volume` 右邊 Storage 選一個`Storage Class` ，按 Define
+設定位置、空間大小、_**Storage Class**_、Access Mode 完成後，按 Define
+
+{% hint style="info" %}
+Source 選 Use a Storage Class to provision a new persistent volume ，右邊 Storage Class 選任一個，按 Define
+{% endhint %}
 
 ![](.gitbook/assets/3%20%281%29.PNG)
 
-指定 Mount Path \(在 Container 中的位置\)
+指定 Mount Path \( volume 在 Container 中的目錄位置\)
 
 ![](.gitbook/assets/4%20%281%29.PNG)
 
@@ -87,6 +96,8 @@ Source 選 `Use a Storage Class to  provision a new persistent volume` 右邊 St
 ![](.gitbook/assets/image%20%289%29.png)
 
 設定名稱、node 上的 device 路徑\(Path on the node\)、container 上的路徑 \(Mount Path\)
+
+![](.gitbook/assets/image%20%2816%29.png)
 
 ![](.gitbook/assets/image%20%288%29.png)
 

@@ -12,10 +12,6 @@ description: 部署一個簡單的 Nginx 為範例
 
 ### Step2: 設定 Container 資訊
 
-####     選  Import YAML：
-
-        匯入已有的 YAML
-
 ####     選  Deploy：
 
         依照需求，設定 Container 資訊 ，Name、Port、Environmant Variables、 Volume...
