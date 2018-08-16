@@ -16,12 +16,12 @@ description: 部署一個簡單的 Nginx 為範例
 
         依照需求，設定 Container 資訊 ，Name、Port、Environmant Variables、 Volume...
 
-![&#x8F38;&#x5165; name&#x3001;Image&#x3001;&#x5C6C;&#x65BC;&#x54EA;&#x500B; Namesapce&#xFF0C;port &#x7B49;&#x8CC7;&#x8A0A;](.gitbook/assets/image%20%2813%29.png)
+![&#x8F38;&#x5165; name&#x3001;Image&#x3001;&#x5C6C;&#x65BC;&#x54EA;&#x500B; Namesapce&#xFF0C;port &#x7B49;&#x8CC7;&#x8A0A;](.gitbook/assets/image%20%2814%29.png)
 
   
 下方可設定 ENV、Volume 等......
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](.gitbook/assets/image%20%2825%29.png)
 
 {% hint style="info" %}
 #### 詳細設定
@@ -35,15 +35,15 @@ description: 部署一個簡單的 Nginx 為範例
 
 #### 成功部署完成後，會顯示 Acvtive 
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2817%29.png)
 
 若有設定 Port 可以點選底下的 `30189/TCP`透過 HTTP 連到網頁上。
 
-![](.gitbook/assets/image%20%2823%29.png)
+![](.gitbook/assets/image%20%2824%29.png)
 
 ### 修改設定
 
 按右側的 三個點 -&gt; Edit
 
-![](.gitbook/assets/image%20%2811%29.png)
+![](.gitbook/assets/image%20%2812%29.png)
 

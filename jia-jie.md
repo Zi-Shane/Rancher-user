@@ -27,7 +27,7 @@ Project 底下可以有一個或多個 Namespace
 
 這裡有兩個 Cluster 分別是 Cluster01和 Cluster02
 
-![&#x767B;&#x5165;&#x4E4B;&#x5F8C;&#x53EF;&#x770B;&#x5230;&#x53EF;&#x7528;&#x7684; Cluster](.gitbook/assets/image%20%2818%29.png)
+![&#x767B;&#x5165;&#x4E4B;&#x5F8C;&#x53EF;&#x770B;&#x5230;&#x53EF;&#x7528;&#x7684; Cluster](.gitbook/assets/image%20%2819%29.png)
 
 ## Project
 
@@ -37,7 +37,7 @@ Project 底下可以有一個或多個 Namespace
 
 這裡有兩個 Project 在 Cluster01 底下，分別是 Default 和 Project02
 
-![Cluster &#x53EF;&#x5206;&#x591A;&#x500B; Project &#x4F7F;&#x7528;](.gitbook/assets/image%20%282%29.png)
+![Cluster &#x53EF;&#x5206;&#x591A;&#x500B; Project &#x4F7F;&#x7528;](.gitbook/assets/image%20%283%29.png)
 
 ## Namespace
 
@@ -45,7 +45,7 @@ Project 底下可以有一個或多個 Namespace
 
 進入左上角 Global -&gt; Cluster:xxx -&gt; Projectxx 後，再分為多的 Namespace，Namespace 底下可以部署 Container
 
-![Project &#x5E95;&#x4E0B;&#x7684; Namespace](.gitbook/assets/image%20%2826%29.png)
+![Project &#x5E95;&#x4E0B;&#x7684; Namespace](.gitbook/assets/image%20%2827%29.png)
 
 {% hint style="danger" %}
 Cluster, Project, Namespace 由左上角的 Rancher Logo 右方的 Dropdown 下拉選單切換
@@ -54,9 +54,7 @@ Cluster, Project, Namespace 由左上角的 Rancher Logo 右方的 Dropdown 下�
 意思是 Cluster:xxx 底下的 Project:xxx 
 {% endhint %}
 
-{% hint style="danger" %}
-在 Cluster:xxx, Project:xxx 不同階層，右方的 Navigation Bar 會功能會有所不同，要特別注意
-{% endhint %}
+
 
 
 

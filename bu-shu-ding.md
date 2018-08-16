@@ -16,7 +16,7 @@
 
 完成後，回到 Workloads 頁面，會看到底下的 `30189/TCP` 點它後，跳出的新網頁，網址列上的 ip: port 就可以連到 Container 上
 
-![](.gitbook/assets/image%20%2823%29.png)
+![](.gitbook/assets/image%20%2824%29.png)
 
 ### 2. Ingress
 
@@ -38,13 +38,13 @@
 也可以自己指定 Domain name \(需自行設定 hosts 對應到任一個 node 的 ip\)
 {% endhint %}
 
-![](.gitbook/assets/image%20%2820%29.png)
+![](.gitbook/assets/image%20%2821%29.png)
 
 透過生成的 Domain name 可以連到網頁上
 
-![](.gitbook/assets/image%20%285%29.png)
+![](.gitbook/assets/image%20%286%29.png)
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 ## Volume 設定
 
@@ -52,7 +52,7 @@
 
 到 Workloads 找到要掛 volume 的 Container 按右邊三的點 -&gt; Edit
 
-![](.gitbook/assets/image%20%2811%29.png)
+![](.gitbook/assets/image%20%2812%29.png)
 
 新增 volume \(Add volume... -&gt; Add a persistent volume\)
 
@@ -83,7 +83,7 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 到 Workloads 找到要掛 device 的 Application 按右邊三的點-&gt; Edit
 
-![](.gitbook/assets/image%20%2811%29.png)
+![](.gitbook/assets/image%20%2812%29.png)
 
 按右下角 `show advance options`，找到 `Security & Host Config` 把 `Privileged` 選 yes
 
@@ -93,13 +93,13 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 ![](.gitbook/assets/1.PNG)
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image%20%2810%29.png)
 
 設定名稱、node 上的 device 路徑\(Path on the node\)、container 上的路徑 \(Mount Path\)
 
-![](.gitbook/assets/image%20%2816%29.png)
+![](.gitbook/assets/image%20%2817%29.png)
 
-![](.gitbook/assets/image%20%288%29.png)
+![](.gitbook/assets/image%20%289%29.png)
 
 完成後按最下面的 Upgrade，就完成了，可以到 container 底下找到 device
 
