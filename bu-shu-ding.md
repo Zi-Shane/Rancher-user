@@ -1,3 +1,7 @@
+---
+description: 本節包含，如何從外部連到 Container、如何掛載 Volume、device
+---
+
 # 詳細部署設定
 
 ## Access to Container
@@ -16,7 +20,7 @@
 
 完成後，回到 Workloads 頁面，會看到底下的 `30189/TCP` 點它後，跳出的新網頁，網址列上的 ip: port 就可以連到 Container 上
 
-![](.gitbook/assets/image%20%2824%29.png)
+![](.gitbook/assets/image%20%2826%29.png)
 
 ### 2. Ingress
 
@@ -38,21 +42,23 @@
 也可以自己指定 Domain name \(需自行設定 hosts 對應到任一個 node 的 ip\)
 {% endhint %}
 
-![](.gitbook/assets/image%20%2821%29.png)
+![](.gitbook/assets/image%20%2822%29.png)
 
 透過生成的 Domain name 可以連到網頁上
 
 ![](.gitbook/assets/image%20%286%29.png)
 
-![](.gitbook/assets/image%20%2813%29.png)
+![](.gitbook/assets/image%20%2814%29.png)
 
 ## Volume 設定
 
-#### 若要保存資料，需要掛上 NFS 的 Persistent Volume 
+#### 因為 Container 啟動後新增的資料，在 Container 重啟或刪除後並不會被保存下來，若要保存資料，需要掛上 NFS 的  Volume ，如此資料才會被保存下來
+
+### 新增 Volume
 
 到 Workloads 找到要掛 volume 的 Container 按右邊三的點 -&gt; Edit
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 新增 volume \(Add volume... -&gt; Add a persistent volume\)
 
@@ -68,14 +74,42 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 ![](.gitbook/assets/3%20%281%29.PNG)
 
-指定 Mount Path \( volume 在 Container 中的目錄位置\)
+指定 Mount Path \( volume 在 Container 中的目錄位置\)，完成後按 Update
 
 ![](.gitbook/assets/4%20%281%29.PNG)
 
-最後 Update ，狀態變為 Avtice 就完成了
+ 狀態變為 Avtice 就成功了
+
+![](.gitbook/assets/image%20%2818%29.png)
+
+若要找已經建立好的 Volume，可以按 Workloads 右方的 Volume 頁面找到
+
+![](.gitbook/assets/333.png)
+
+
+
+{% hint style="info" %}
+若需要存取 Volume 裡面的資料，要用 [FTP 工具](https://filezilla-project.org/)連到 NFS Server 上
 
 資料夾在 NFS Server 上的命名規則為 "`<namespace>-<Volume Name>-pvc-xxxxxxxxxxxx`"    
 這裡的例子會是 "`namespace02-vol01-pvc-xxxxxxxxxxxxx`" 可以在 NFS Server 設定的 Share directory 下找到這個資料夾
+{% endhint %}
+
+### 掛載之前的 Volume
+
+若 Container 刪除後，Volume  
+
+到 Workloads 找到要掛 volume 的 Container 按右邊三的點 -&gt; Edit
+
+![](.gitbook/assets/image%20%2813%29.png)
+
+掛載 volume \(Add volume... -&gt; Use an persistent volume\)
+
+![](.gitbook/assets/image%20%287%29.png)
+
+接著 Persistent Volume Claim 的下拉選單，可以選先前建立的 Volume，掛回 Container 中
+
+![](.gitbook/assets/image%20%2825%29.png)
 
 ## Bind device
 
@@ -83,7 +117,7 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 到 Workloads 找到要掛 device 的 Application 按右邊三的點-&gt; Edit
 
-![](.gitbook/assets/image%20%2812%29.png)
+![](.gitbook/assets/image%20%2813%29.png)
 
 按右下角 `show advance options`，找到 `Security & Host Config` 把 `Privileged` 選 yes
 
@@ -93,13 +127,13 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 ![](.gitbook/assets/1.PNG)
 
-![](.gitbook/assets/image%20%2810%29.png)
+![](.gitbook/assets/image%20%2811%29.png)
 
 設定名稱、node 上的 device 路徑\(Path on the node\)、container 上的路徑 \(Mount Path\)
 
-![](.gitbook/assets/image%20%2817%29.png)
+![](.gitbook/assets/image%20%2818%29.png)
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image%20%2810%29.png)
 
 完成後按最下面的 Upgrade，就完成了，可以到 container 底下找到 device
 

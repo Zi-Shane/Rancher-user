@@ -16,11 +16,11 @@
 
 在任一個 Project:xxx 的右上角，按 Add Namespace
 
-![](.gitbook/assets/image%20%2815%29.png)
+![](.gitbook/assets/image%20%2816%29.png)
 
 設定名稱，完成後按 Create
 
-![](.gitbook/assets/image%20%2818%29.png)
+![](.gitbook/assets/image%20%2819%29.png)
 
 可看看到剛建立的 Namespace
 
