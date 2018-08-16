@@ -86,10 +86,8 @@ Source 選 Use a Storage Class to provision a new persistent volume ，右邊 St
 
 ![](.gitbook/assets/333.png)
 
-
-
 {% hint style="info" %}
-若需要存取 Volume 裡面的資料，要用 [FTP 工具](https://filezilla-project.org/)連到 NFS Server 上
+若需要存取 Volume 裡面的資料，要連到 NFS Server 上的 NFS 分享目錄下存取
 
 資料夾在 NFS Server 上的命名規則為 "`<namespace>-<Volume Name>-pvc-xxxxxxxxxxxx`"    
 這裡的例子會是 "`namespace02-vol01-pvc-xxxxxxxxxxxxx`" 可以在 NFS Server 設定的 Share directory 下找到這個資料夾
